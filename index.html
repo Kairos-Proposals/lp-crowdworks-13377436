@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kairos ご提案 | 美容院・ヘアサロンLPデザイン制作</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Cormorant+Garamond:ital@0;1&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#221825;
+    --wine:#5C2A3D;
+    --rose:#E3A6B0;
+    --gold:#C9A063;
+    --mist:#F6EFEA;
+    --charcoal:#332831;
+    --line: rgba(255,255,255,0.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    color:var(--charcoal);
+    background:var(--mist);
+    line-height:1.9;
+    letter-spacing:0.02em;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{
+    font-family:'Shippori Mincho', serif;
+  }
+  .en{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    letter-spacing:0.18em;
+  }
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    background:
+      radial-gradient(circle at 82% 18%, rgba(227,166,176,0.25), transparent 45%),
+      radial-gradient(circle at 10% 85%, rgba(201,160,99,0.22), transparent 50%),
+      linear-gradient(160deg, #1a1220 0%, var(--ink) 45%, var(--wine) 130%);
+    color:#F3E9E4;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:120px 24px 80px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    width:140%;
+    height:2px;
+    background:linear-gradient(90deg, transparent, var(--gold), transparent);
+    top:14%;
+    left:-20%;
+    transform:rotate(-8deg);
+    opacity:0.6;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    width:160%;
+    height:1px;
+    background:linear-gradient(90deg, transparent, var(--rose), transparent);
+    bottom:18%;
+    right:-30%;
+    transform:rotate(6deg);
+    opacity:0.4;
+  }
+  .strand{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(0px);
+    opacity:0.5;
+  }
+  .strand.s1{
+    width:340px; height:340px;
+    border:1px solid var(--rose);
+    top:-80px; right:-100px;
+    opacity:0.25;
+  }
+  .strand.s2{
+    width:220px; height:220px;
+    border:1px solid var(--gold);
+    bottom:-60px; left:-60px;
+    opacity:0.3;
+  }
+  .kicker{
+    font-size:14px;
+    letter-spacing:0.4em;
+    color:var(--rose);
+    margin-bottom:26px;
+    z-index:2;
+  }
+  .hero h1{
+    font-size:clamp(34px, 6vw, 68px);
+    line-height:1.5;
+    font-weight:700;
+    z-index:2;
+    max-width:900px;
+  }
+  .hero h1 span{
+    display:inline-block;
+    color:var(--gold);
+  }
+  .hero p.sub{
+    margin-top:28px;
+    max-width:560px;
+    font-size:15px;
+    color:#D9C9C3;
+    z-index:2;
+  }
+  .hero .from{
+    margin-top:50px;
+    font-size:13px;
+    letter-spacing:0.3em;
+    color:#B79A98;
+    z-index:2;
+  }
+  .scissor{
+    margin-top:34px;
+    width:60px;
+    height:2px;
+    background:var(--gold);
+    position:relative;
+    z-index:2;
+  }
+  .scissor::before,.scissor::after{
+    content:"";
+    position:absolute;
+    width:10px; height:10px;
+    border:1px solid var(--gold);
+    border-radius:50%;
+    top:-4px;
+  }
+  .scissor::before{ left:-16px; }
+  .scissor::after{ right:-16px; }
+
+  section{
+    padding:110px 24px;
+    position:relative;
+  }
+  .container{
+    max-width:1040px;
+    margin:0 auto;
+  }
+
+  /* ===== UNDERSTANDING ===== */
+  .understand{
+    background:var(--mist);
+  }
+  .understand .tag{
+    font-size:13px;
+    letter-spacing:0.3em;
+    color:var(--wine);
+    margin-bottom:18px;
+    display:block;
+  }
+  .understand h2{
+    font-size:clamp(24px,4vw,36px);
+    color:var(--ink);
+    max-width:760px;
+    margin-bottom:36px;
+  }
+  .understand-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:34px;
+    margin-top:40px;
+  }
+  .understand-card{
+    background:#fff;
+    border:1px solid rgba(92,42,61,0.12);
+    padding:32px 30px;
+    border-radius:2px;
+    position:relative;
+  }
+  .understand-card::before{
+    content:"";
+    position:absolute;
+    top:0; left:0;
+    width:3px; height:100%;
+    background:linear-gradient(180deg, var(--rose), var(--gold));
+  }
+  .understand-card h3{
+    font-size:18px;
+    margin-bottom:12px;
+    color:var(--wine);
+  }
+  .understand-card p{
+    font-size:14.5px;
+    color:#5a4d52;
+  }
+
+  /* ===== VALUE ===== */
+  .value{
+    background:linear-gradient(180deg, var(--ink), #2b1e2c);
+    color:#F3E9E4;
+  }
+  .value .tag{
+    font-size:13px;
+    letter-spacing:0.3em;
+    color:var(--gold);
+    display:block;
+    margin-bottom:18px;
+  }
+  .value h2{
+    font-size:clamp(24px,4vw,36px);
+    margin-bottom:50px;
+    max-width:700px;
+  }
+  .value-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+  }
+  .value-card{
+    background:rgba(255,255,255,0.03);
+    border:1px solid var(--line);
+    padding:34px 26px;
+    transition:transform 0.3s ease, border-color 0.3s ease;
+  }
+  .value-card:hover{
+    transform:translateY(-6px);
+    border-color:var(--rose);
+  }
+  .value-num{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:38px;
+    color:var(--rose);
+    margin-bottom:18px;
+  }
+  .value-card h3{
+    font-size:17px;
+    margin-bottom:12px;
+    color:#F3E9E4;
+  }
+  .value-card p{
+    font-size:14px;
+    color:#C9B8B9;
+  }
+
+  /* ===== PROCESS ===== */
+  .process{
+    background:var(--mist);
+  }
+  .process .tag{
+    font-size:13px;
+    letter-spacing:0.3em;
+    color:var(--wine);
+    display:block;
+    margin-bottom:18px;
+  }
+  .process h2{
+    font-size:clamp(24px,4vw,36px);
+    color:var(--ink);
+    margin-bottom:60px;
+  }
+  .timeline{
+    position:relative;
+    padding-left:30px;
+    border-left:1px solid rgba(92,42,61,0.25);
+  }
+  .step{
+    position:relative;
+    padding-bottom:52px;
+  }
+  .step:last-child{ padding-bottom:0; }
+  .step::before{
+    content:"";
+    position:absolute;
+    left:-36px;
+    top:2px;
+    width:12px; height:12px;
+    border-radius:50%;
+    background:var(--gold);
+    box-shadow:0 0 0 4px var(--mist), 0 0 0 5px rgba(92,42,61,0.25);
+  }
+  .step .day{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:14px;
+    color:var(--wine);
+    letter-spacing:0.1em;
+    margin-bottom:6px;
+  }
+  .step h3{
+    font-size:18px;
+    color:var(--ink);
+    margin-bottom:8px;
+  }
+  .step p{
+    font-size:14px;
+    color:#5a4d52;
+    max-width:560px;
+  }
+
+  /* ===== CLOSING ===== */
+  .closing{
+    background:linear-gradient(140deg, var(--wine), #3a1f2c 60%, var(--ink));
+    color:#F3E9E4;
+    text-align:center;
+    padding:130px 24px;
+  }
+  .closing .tag{
+    font-size:13px;
+    letter-spacing:0.3em;
+    color:var(--rose);
+    display:block;
+    margin-bottom:22px;
+  }
+  .closing h2{
+    font-size:clamp(26px,5vw,42px);
+    margin-bottom:26px;
+  }
+  .closing p{
+    max-width:520px;
+    margin:0 auto 44px;
+    color:#E3D3D0;
+    font-size:15px;
+  }
+  .cta{
+    display:inline-block;
+    padding:18px 52px;
+    border:1px solid var(--gold);
+    color:var(--gold);
+    text-decoration:none;
+    font-size:14px;
+    letter-spacing:0.25em;
+    transition:all 0.3s ease;
+    position:relative;
+  }
+  .cta:hover{
+    background:var(--gold);
+    color:var(--ink);
+  }
+  .foot-note{
+    margin-top:36px;
+    font-size:12px;
+    color:#A98F92;
+    letter-spacing:0.1em;
+  }
+
+  footer{
+    background:var(--ink);
+    color:#8B767A;
+    text-align:center;
+    padding:28px;
+    font-size:12px;
+    letter-spacing:0.2em;
+  }
+
+  @media (max-width:820px){
+    .understand-grid{ grid-template-columns:1fr; }
+    .value-grid{ grid-template-columns:1fr; }
+    section{ padding:80px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="strand s1"></div>
+  <div class="strand s2"></div>
+  <span class="kicker en">KAIROS — PROPOSAL</span>
+  <h1>切り取るのは、髪ではなく<br><span>「選ばれる理由」</span>。</h1>
+  <p class="sub">InstagramやWeb広告から訪れたその一瞬の視線を、来店の決意に変える。<br>美容院・ヘアサロン専門のLPデザインとして、Kairosがご提案いたします。</p>
+  <div class="scissor"></div>
+  <div class="from">Proposal from Kairos Design &amp; Development Team</div>
+</section>
+
+<section class="understand">
+  <div class="container">
+    <span class="tag en">Understanding the Brief</span>
+    <h2>「継続あり」の一言に、長くお付き合いできる<br>パートナーを探していると感じました。</h2>
+    <div class="understand-grid">
+      <div class="understand-card">
+        <h3>流入経路への理解</h3>
+        <p>InstagramやWeb広告から来る方は、すでにサロンの雰囲気に興味を持った状態です。世界観の一貫性を崩さず、そのまま予約へ導く導線設計が鍵になります。</p>
+      </div>
+      <div class="understand-card">
+        <h3>予算感への理解</h3>
+        <p>10,000円〜30,000円というご予算は、単発の大掛かりな制作というより「スピード感」と「継続的な改善」を重視されているものと受け止めています。</p>
+      </div>
+      <div class="understand-card">
+        <h3>美容業界特有の温度感</h3>
+        <p>価格や技術力だけでなく、施術後の仕上がりや店内の空気感といった「感覚的な価値」を、限られた情報量の中で伝えるデザインが求められます。</p>
+      </div>
+      <div class="understand-card">
+        <h3>継続案件としての視点</h3>
+        <p>一度で終わらせず、キャンペーンや季節ごとの訴求に応じて素早く作り変えられる、再現性のある制作体制が必要だと考えています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="value">
+  <div class="container">
+    <span class="tag en">What Kairos Offers</span>
+    <h2>デザインだけでなく、「予約が入る仕組み」までを一緒に。</h2>
+    <div class="value-grid">
+      <div class="value-card">
+        <div class="value-num">01</div>
+        <h3>サロンの世界観の翻訳</h3>
+        <p>内装・施術・接客が持つ空気感をヒアリングし、色と余白、タイポグラフィで再現します。安さではなく「らしさ」で選ばれるLPに。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">02</div>
+        <h3>広告流入に強い設計</h3>
+        <p>Instagram広告・Web広告からの遷移を前提に、ファーストビューで離脱させない構成と、モバイル優先のレイアウトを標準仕様とします。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">03</div>
+        <h3>予算に合わせた制作範囲</h3>
+        <p>30,000円以内でも成果につながるよう、必要な要素に絞った設計を提案。過剰な演出よりも、予約導線の完成度を優先します。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">04</div>
+        <h3>継続を前提としたテンプレート化</h3>
+        <p>キャンペーンLPを都度ゼロから作らず、ベースデザインを型化。2回目以降の制作スピードとコストを最適化します。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">05</div>
+        <h3>チームとしての対応力</h3>
+        <p>Kairosはデザインとコーディングを一体で行うチームです。修正対応や公開後のちょっとした調整も、やりとり一本で完結します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <div class="container">
+    <span class="tag en">How We Work</span>
+    <h2>ご依頼から公開まで、最短で。</h2>
+    <div class="timeline">
+      <div class="step">
+        <div class="day">Day 1</div>
+        <h3>ヒアリング</h3>
+        <p>サロンの強み・ターゲット層・広告の訴求内容を伺い、LPのゴールを明確にします。</p>
+      </div>
+      <div class="step">
+        <div class="day">Day 2-3</div>
+        <h3>デザイン初稿</h3>
+        <p>世界観の方向性を1案にまとめ、構成とビジュアルの骨子をご提示します。</p>
+      </div>
+      <div class="step">
+        <div class="day">Day 4</div>
+        <h3>フィードバック反映</h3>
+        <p>細かなニュアンスの調整を行い、予約ボタンの配置や文言まで詰めていきます。</p>
+      </div>
+      <div class="step">
+        <div class="day">Day 5</div>
+        <h3>納品・公開</h3>
+        <p>実装済みのLPとしてお渡し、または公開まで対応。以降の継続改善もご相談ください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <span class="tag en">Next Step</span>
+  <h2>まずは、サロンのお話を聞かせてください。</h2>
+  <p>デザインの好み、ターゲットのお客様像、今伝えたいキャンペーン。<br>小さな情報からでも、来店につながる一枚をご一緒に作ります。</p>
+  <a href="#" class="cta">お問い合わせ</a>
+  <div class="foot-note">Kairos — Web制作・システム開発チーム</div>
+</section>
+
+<footer>
+  © KAIROS DESIGN &amp; DEVELOPMENT TEAM
+</footer>
+
+</body>
+</html>
